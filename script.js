@@ -13,12 +13,7 @@ function sutitZinu()
 }
 
 
-async function ieladetChataZinas()
-{
-    let datiNoServera = await fetch('/'API + '/lasit');//Fetč komanda ļauj piekļūt kautkam//
-    let dati = await datiNoServera.text();
-    zinas.innerHTML = dati;
-}
+
 async function ieladetChataZinas()
 {
     let datiNoServera = await fetch(API + '/lasit');
@@ -37,7 +32,13 @@ async function ieladetChataZinasJson()
     while ( i < await dati.length )//Kamēr tiks izpildīts tas kas ir šajās iekavās, tikmēr dabosies tas kas ir figūriekavās
     {
         //console.log(i);
-        zinas.innerHTML = zinas.innerHTML+dati[i]['vards']+': '+dati[i]['zina']+'<br />';
+       
+        let laiks = '[<i>' + '????          ' + '</i>] ';
+        if ("laiks" in dati[i]) {
+            laiks = '[<i>' + dati[i]['laiks'] + '</i>] ';
+        }
+        zinas.innerHTML = zinas.innerHTML + laiks + dati[i]['vards']+': '+dati[i]['zina']+'<br />';
+
         i = i+1;
     }
    zinas.scrollTop = zinas.scrollHeight; 
