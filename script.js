@@ -7,12 +7,14 @@ function sutitZinu()
     console.log('sutitZinu() darbojas');
     
     zinas.innerHTML = zinas.innerHTML + '<br/>'zina.value;
+    
+    fetch(API + '/sutit/Juris/' + zina.value)
 }
 
 
 async function ieladetChataZinas()
 {
-    let datiNoServera = await fetch('chatazinas.txt')//Fetč komanda ļauj piekļūt kautkam//
+    let datiNoServera = await fetch('/'API + 'lasit');//Fetč komanda ļauj piekļūt kautkam//
     let dati = await datiNoServera.text();
     zinas.innerHTML = dati;
 }
