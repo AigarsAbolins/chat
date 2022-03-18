@@ -1,4 +1,4 @@
-//console.log(1)//
+const API = "https://chat2.aigarsabolins.repl.co/"
 let zina = document.querySelector('.manaZina');//let ir mainīgais.Comanda uzzina kas ir rakstits laukumā//
 let zinas = document.querySelector('.chataZinas');
 
@@ -16,3 +16,5 @@ async function ieladetChataZinas()
     let dati = await datiNoServera.text();
     zinas.innerHTML = dati;
 }
+
+setInterval( ieladetChataZinas, 1000 )//Reizi sekundē ielādē jaunākās ziņas no faila 1000 milisekundes//
