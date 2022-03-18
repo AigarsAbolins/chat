@@ -19,8 +19,12 @@ async function ieladetChataZinas()
     let dati = await datiNoServera.text();
     zinas.innerHTML = dati;
 }
-
-//setInterval( ieladetChataZinas, 1000 )//Reizi sekundē ielādē jaunākās ziņas no faila 1000 milisekundes//
+async function ieladetChataZinas()
+{
+    let datiNoServera = await fetch(API + '/lasit');
+    let dati = await datiNoServera.text();
+    zinas.innerHTML = dati;
+}
 
 async function ieladetChataZinasJson()
 {
@@ -30,10 +34,12 @@ async function ieladetChataZinasJson()
     //console.log(await dati[0]['zina'])
     zinas.innerHTML = '';
     i = 0;
-    while ( i < await dati.length )//Kamēr tiks izpildīts tas kas ir šajās ieka'vas, tikmēr dabosies tas kas ir figūriekavās
+    while ( i < await dati.length )//Kamēr tiks izpildīts tas kas ir šajās iekavās, tikmēr dabosies tas kas ir figūriekavās
     {
-        console.log(i);
-        zinas.innerHTML = zinas.innerHTML + dati[i]['zina'];
+        //console.log(i);
+        zinas.innerHTML = zinas.innerHTML+dati[i]['vards']+': '+dati[i]['zina']+'<br />';
         i = i+1;
     }
+   zinas.scrollTop = zinas.scrollHeight; 
 }//šeit beidzas funkcija ieladeCharaZinasJson()
+setInterval( ieladetChataZinasJson, 1000 )//Reizi sekundē ielādē jaunākās ziņas no faila 1000 milisekundes//
