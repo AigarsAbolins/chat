@@ -1,4 +1,4 @@
-const API = "https://chat2.aigarsabolins.repl.co/"
+const API = 'https://chat2.aigarsabolins.repl.co/'
 let zina = document.querySelector('.manaZina');//let ir mainīgais.Comanda uzzina kas ir rakstits laukumā//
 let zinas = document.querySelector('.chataZinas');
 let vards = document.querySelector('.vards');
