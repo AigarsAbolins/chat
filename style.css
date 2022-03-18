@@ -1,0 +1,22 @@
+body
+{
+    background: yellow;
+}
+
+.wrapper
+{
+    background: rgb(95, 29, 202);
+    width: 500px;
+    height: 500px;
+    border: 2px solid rgb(82, 0, 0);
+    padding:15px;/*Atstarpē iekšusē, polsterējums:)*/
+    margin: auto;/*Atstarpe uz ārpuses*/
+}
+.chataZinas
+{
+    background: whitesmoke;
+    height: 300px;
+    color:  red;
+    padding 5px;
+    overflow-y: scroll;/*ritjosla*/
+}
