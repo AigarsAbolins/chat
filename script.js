@@ -9,7 +9,7 @@ function sutitZinu()
     
     zinas.innerHTML = zinas.innerHTML + '<br/>'zina.value;
     
-    fetch(API + '/sutit/' + vards.value +'/'+ zina.value)
+    fetch(API + 'sutit/' + vards.value +'/'+ zina.value)
 }
 
 
@@ -23,7 +23,7 @@ async function ieladetChataZinas()
 
 async function ieladetChataZinasJson()
 {
-    let datiNoServera = await fetch('/'API + '/lasit');//Fetč komanda ļauj piekļūt kautkam//
+    let datiNoServera = await fetch(API + 'lasit');//Fetč komanda ļauj piekļūt kautkam//
     let dati = await datiNoServera.json();
     
     //console.log(await dati[0]['zina'])
